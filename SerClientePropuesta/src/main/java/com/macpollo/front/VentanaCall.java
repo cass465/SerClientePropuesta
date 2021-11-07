@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.edu.unicundi.front;
+package com.macpollo.front;
 
 import java.awt.Image;
 import javax.swing.Icon;
@@ -22,9 +22,12 @@ public class VentanaCall extends javax.swing.JFrame {
         initComponents();
         
         //Icono del frame
-        this.setIconImage(new ImageIcon("src/main/java/com/edu/unicundi/images/icons/MacPolloIcon.png").getImage());
+        this.setIconImage(new ImageIcon("src/main/java/com/macpollo/images/icons/MacPolloIcon.png").getImage());
         
-        ImageIcon imagen = new ImageIcon("src/main/java/com/edu/unicundi/images/icons/MacPolloN1.png");
+        //Centrar ventana en pantalla
+        setLocationRelativeTo(null);
+        
+        ImageIcon imagen = new ImageIcon("src/main/java/com/macpollo/images/icons/MacPolloN1.png");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(iconMacL.getWidth(), iconMacL.getHeight(), Image.SCALE_DEFAULT));
         iconMacL.setIcon(icono);
         //this.repaint();
@@ -130,10 +133,13 @@ public class VentanaCall extends javax.swing.JFrame {
 
     private void aceptarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBtnActionPerformed
         new VentanaLogin().setVisible(true);
+        
+        //Cierra el frame
+        this.dispose();
     }//GEN-LAST:event_aceptarBtnActionPerformed
 
     private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_salirBtnActionPerformed
 
     /**
